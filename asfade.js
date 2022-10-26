@@ -4,6 +4,8 @@ const asFade = {
     speed: "1s",
     disableOnMobile: true,
     amount: "10px",
+    // Percentage 1-100 That Elements must be in viewport to fade in 
+    elemPercentage = 10,
 
     init: ()=>{
         // Inject Styles
@@ -52,7 +54,7 @@ const asFade = {
         
         // initial scan
         fadeElems.forEach((elem)=>{
-            if(isElementXPercentInViewport(elem, 10)){
+            if(isElementXPercentInViewport(elem, asFade.elemPercentage)){
                 elem.classList.add("as-fade-on");
             }
         });
@@ -60,7 +62,7 @@ const asFade = {
         // Scroll checks
         document.addEventListener("scroll", ()=>{
             fadeElems.forEach((elem)=>{
-                if(isElementXPercentInViewport(elem, 10)){
+                if(isElementXPercentInViewport(elem, asFade.elemPercentage)){
                     elem.classList.add("as-fade-on");
                 }else{
                     elem.classList.remove("as-fade-on");
