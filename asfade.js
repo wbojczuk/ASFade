@@ -5,7 +5,7 @@ const asFade = {
     disableOnMobile: true,
     amount: "10px",
     // Percentage 1-100 That Elements must be in viewport to fade in 
-    elemPercentage = 10,
+    elemPercentage: 10,
 
     init: ()=>{
         // Inject Styles
